@@ -37,6 +37,43 @@ const { data, error } = await supabase
   .select('*')
 ```
 
+## Deployment
+
+### Environment Variables
+
+Before deploying, ensure you set the `SUPABASE_KEY` environment variable in your deployment platform:
+
+**Vercel:**
+```bash
+vercel env add SUPABASE_KEY
+```
+
+**Netlify:**
+- Go to Site settings → Build & deploy → Environment
+- Add `SUPABASE_KEY` with your Supabase anonymous key
+
+**Heroku:**
+```bash
+heroku config:set SUPABASE_KEY=your_supabase_anon_key
+```
+
+**AWS/Azure/GCP:**
+- Configure environment variables in your service configuration (Lambda, App Service, Cloud Functions, etc.)
+
+**Docker:**
+```bash
+docker run -e SUPABASE_KEY=your_supabase_anon_key your-image
+```
+
+### General Deployment Steps
+
+1. Push your code to your repository
+2. Connect your deployment platform to your repository
+3. Set the `SUPABASE_KEY` environment variable in your platform's settings
+4. Deploy the application
+
+The Supabase URL is already configured in the code and does not need to be set as an environment variable.
+
 ## Project Structure
 
 ```
