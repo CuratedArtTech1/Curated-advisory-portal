@@ -1,0 +1,20 @@
+{
+  "name": "curated-advisory-portal",
+  "version": "1.0.0",
+  "description": "Advisory portal with Supabase integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "advisory",
+    "supabase",
+    "portal"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.78.0"
+  }
+}
