@@ -49,8 +49,19 @@ vercel env add SUPABASE_KEY
 ```
 
 **Netlify:**
-- Go to Site settings → Build & deploy → Environment
-- Add `SUPABASE_KEY` with your Supabase anonymous key
+1. Connect your repository to Netlify:
+   - Go to [netlify.com](https://netlify.com) and sign in
+   - Click "Add new site" → "Import an existing project"
+   - Choose your Git provider and select this repository
+2. Configure build settings (if needed):
+   - Build command: `npm run build` (or leave empty if no build step)
+   - Publish directory: `.` (or your build output directory)
+3. Add environment variable:
+   - Go to Site settings → Build & deploy → Environment → Environment variables
+   - Click "Add a variable"
+   - Key: `SUPABASE_KEY`
+   - Value: Your Supabase anonymous key (from https://supabase.com/dashboard → Project Settings → API)
+4. Click "Deploy site"
 
 **Heroku:**
 ```bash
