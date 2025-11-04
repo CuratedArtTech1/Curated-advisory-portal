@@ -39,6 +39,59 @@ const { data, error } = await supabase
 
 ## Deployment
 
+### Quick Deploy to Netlify (Copy & Paste)
+
+**Your repository:** `https://github.com/CuratedArtTech1/Curated-advisory-portal`
+
+**Step 1: Get your Supabase Key**
+1. Go to https://supabase.com/dashboard
+2. Select your project
+3. Go to Project Settings → API
+4. Copy the `anon` `public` key
+
+**Step 2: Deploy via Netlify UI**
+1. Go to https://app.netlify.com/start
+2. Click "Import from Git" → "GitHub"
+3. Paste your repo URL: `https://github.com/CuratedArtTech1/Curated-advisory-portal`
+4. Click on your repository to select it
+5. Configure settings:
+   - **Build command:** Leave empty (or `npm install` if needed)
+   - **Publish directory:** `.`
+6. Click "Show advanced" → "New variable"
+   - **Key:** `SUPABASE_KEY`
+   - **Value:** [Paste your Supabase anon key here]
+7. Click "Deploy site"
+
+**Step 3: Verify**
+- Once deployed, your site will be live at `https://[random-name].netlify.app`
+- The Supabase client will automatically use your environment variable
+
+### Alternative: Deploy via Netlify CLI
+
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Login to Netlify
+netlify login
+
+# Clone and navigate to your repo
+git clone https://github.com/CuratedArtTech1/Curated-advisory-portal.git
+cd Curated-advisory-portal
+
+# Install dependencies
+npm install
+
+# Deploy (follow prompts, then add SUPABASE_KEY via UI)
+netlify deploy
+```
+
+After deployment, add your `SUPABASE_KEY`:
+1. Go to https://app.netlify.com
+2. Select your site
+3. Site settings → Build & deploy → Environment → Environment variables
+4. Add variable: `SUPABASE_KEY` = [Your Supabase anon key]
+
 ### Environment Variables
 
 Before deploying, ensure you set the `SUPABASE_KEY` environment variable in your deployment platform:
